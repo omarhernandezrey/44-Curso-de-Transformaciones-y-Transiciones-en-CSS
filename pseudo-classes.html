@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Configura la compatibilidad de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ajusta la visualización para dispositivos móviles -->
+    <title>Document</title>
+    <!-- Título de la página -->
+    <style>
+        a:link {
+            color: hotpink; /* Color de enlaces no visitados */
+        }
+        a:visited {
+            color: tomato; /* Color de enlaces visitados */
+        }
+        a:hover {
+            background-color: palegoldenrod; /* Fondo al pasar el cursor sobre el enlace */
+        }
+        p:not(.marabillas) {
+            color: lightsalmon; /* Color de párrafos sin la clase 'marabillas' */
+        }
+        .container div:nth-child(1) {
+            color: lightgreen; /* Color del primer div dentro de .container */
+        }
+    </style>
+</head>
+<body>
+    <a href="/">Alicia</a> <!-- Enlace a la página principal -->
+    <p>En el</p> <!-- Párrafo sin clase -->
+    <p class="marabillas">Pais</p> <!-- Párrafo con clase 'marabillas' -->
+    <div class="container">
+        <div>Omar</div> <!-- Primer div dentro de .container -->
+        <div>Omar</div> <!-- Segundo div dentro de .container -->
+        <div>Omar</div> <!-- Tercer div dentro de .container -->
+    </div>
+</body>
+</html>
