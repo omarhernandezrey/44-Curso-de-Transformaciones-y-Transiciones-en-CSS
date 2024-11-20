@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Configura la vista para dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
+    <title>Document</title>
+    <style>
+        /* Corregido: Cambiado de .chadow a .shadow para coincidir con la clase en HTML */
+        .shadow {
+            background: lightgray; /* Color de fondo gris claro */
+            border-radius: 50%;    /* Bordes redondeados para formar un círculo */
+            width: 100px;          /* Ancho del div */
+            height: 100px;         /* Alto del div */
+        }
+        .circle {
+            /* Corregido: Eliminado el doble 'background:' */
+            background: #f79d00;  /* Fallback para navegadores antiguos */
+            background: -webkit-linear-gradient(to right, #64f38c, #f79d00);  /* Gradiente para Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #64f38c, #f79d00); /* Gradiente estándar para navegadores modernos */
+            border-radius: 50%;    /* Bordes redondeados para formar un círculo */
+            width: 100px;          /* Ancho del div */
+            height: 100px;         /* Alto del div */
+        }
+
+        .circle:hover {
+            transform: translate(-20px, 20px);
+        }
+    </style>
+</head>
+<body>
+    <div class="shadow">
+        <div class="circle"></div>
+    </div>
+</body>
+</html>
