@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Define la codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura la vista para dispositivos móviles -->
+    <title>Document</title>
+    <!-- Título de la página -->
+    <style>
+        .container {
+            position: relative;      /* Define la posición relativa del contenedor */
+            width: 100px;           /* Ancho del contenedor */
+            height: 100px;          /* Alto del contenedor */
+            border: 5px solid hotpink; /* Borde rosado del contenedor */
+            perspective: 100px;     /* Añade perspectiva 3D al contenido */
+        }
+        .item {
+            position: absolute;          /* Define posición absoluta dentro del contenedor */
+            width: 100px;                /* Ancho del elemento interno */
+            height: 100px;               /* Alto del elemento interno */
+            background: greenyellow;     /* Color de fondo verde amarillento */
+            border: 3px solid hotpink;   /* Borde rosado del elemento */
+            opacity: 0.5;                /* Transparencia del 50% */
+            transform-style: preserve-3d; /* Habilita la transformación 3D */
+            transform: rotateX(45deg);    /* Rota el elemento 45 grados en el eje X */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item"></div> <!-- Elemento interno rotado dentro del contenedor -->
+    </div>
+</body>
+</html>
