@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Define la codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura la vista para dispositivos móviles -->
+    <title>3D Rotating Card</title>
+    <!-- Título de la página -->
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Fondo gris claro para destacar la tarjeta */
+        }
+        .card {
+            width: 200px;                   /* Ancho de la tarjeta */
+            height: 200px;                  /* Alto de la tarjeta */
+            transform-style: preserve-3d;   /* Habilita la transformación 3D */
+            transform: rotateY(0deg);       /* Inicia sin rotación */
+            transition: transform 0.6s;     /* Transición suave al rotar */
+            position: relative;             /* Posiciona las caras dentro de la tarjeta */
+        }
+        .card:hover {
+            transform: rotateY(180deg);     /* Gira la tarjeta 180 grados en el eje Y al pasar el cursor */
+        }
+        .face {
+            border-radius: 20px;            /* Bordes redondeados */
+            width: 100%;                   /* Ajusta el ancho al tamaño de la tarjeta */
+            height: 100%;                  /* Ajusta el alto al tamaño de la tarjeta */
+            position: absolute;            /* Posición absoluta dentro de la tarjeta */
+            backface-visibility: hidden;   /* Oculta la cara trasera cuando no está de frente */
+            display: flex;                 /* Centra el contenido de las caras */
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;               /* Tamaño del texto en las caras */
+            font-weight: bold;
+        }
+        .face.front {
+            background: pink;              /* Color de fondo de la cara frontal */
+            color: black;                  /* Color del texto en la cara frontal */
+        }
+        .face.back {
+            background: papayawhip;        /* Color de fondo de la cara trasera */
+            color: black;                  /* Color del texto en la cara trasera */
+            transform: rotateY(180deg);    /* Gira la cara trasera 180 grados */
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="face front">FRONTEN</div> <!-- Cara frontal de la tarjeta -->
+        <div class="face back">BACKEND</div>   <!-- Cara trasera de la tarjeta -->
+    </div>
+</body>
+</html>
