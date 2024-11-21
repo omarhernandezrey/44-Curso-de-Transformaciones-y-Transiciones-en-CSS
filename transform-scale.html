@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Define la codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura la vista para dispositivos móviles -->
+    <title>Document</title>
+    <!-- Título de la página -->
+    <style>
+        .circle {
+            background: #34e89e;  /* Color de fondo para navegadores antiguos */
+            background: -webkit-linear-gradient(to right, #0f3443, #34e89e);  /* Gradiente para Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #0f3443, #34e89e); /* Gradiente estándar para navegadores modernos */
+            width: 100px;          /* Ancho del círculo */
+            height: 100px;         /* Alto del círculo */
+            border-radius: 50%;    /* Hace que el div sea un círculo */
+        }
+        .circle:hover {
+            transform: scale(1.4); /* Aumenta el tamaño al pasar el cursor */
+            /* transform: scale(0.8, 1.2); */ /* Escala personalizada (comentado) */
+            /* transform: scale(0.8);*/ /* Escala uniforme (comentado) */
+            /* transform: scaleY(0.2); */ /* Escala vertical (comentado) */
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div> <!-- Círculo que cambia de tamaño al pasar el cursor -->
+</body>
+</html>
