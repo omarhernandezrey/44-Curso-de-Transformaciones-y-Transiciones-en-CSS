@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Circles</title>
+    <style>
+        /* Contenedor para mantener la disposición */
+        .container {
+            width: 250px;
+            height: 500px;
+            background: linear-gradient(135deg, #0f0c08, #fcb69f);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start; /* Alinea a la izquierda */
+            padding: 20px;
+            border-radius: 12px;
+            margin: 50px auto;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Base de los círculos */
+        .circle {
+            width: 70px; /* Tamaño aumentado */
+            height: 70px; /* Tamaño aumentado */
+            border-radius: 50%;
+            transition: transform 1s ease, background-color 0.5s ease;
+        }
+
+        /* Animaciones generales */
+        .container:hover .circle {
+            transform: translateX(180px) rotate(360deg) scale(1.2); /* Desplazamiento aumentado */
+        }
+
+        /* Círculos individuales */
+        .one {
+            background: yellow;
+            transition-delay: 0.5s;
+        }
+
+        .two {
+            background: blue;
+            transition-delay: 1s;
+        }
+
+        .three {
+            background: red;
+            transition-delay: 1.5s;
+        }
+
+        .four {
+            background: green;
+            transition-delay: 2s;
+        }
+
+        .five {
+            background: purple;
+            transition-delay: 2.5s;
+        }
+
+        .six {
+            background: orange;
+            transition-delay: 3s;
+        }
+
+        /* Cambios de color durante la interacción */
+        .container:hover .one {
+            background: gold;
+        }
+
+        .container:hover .two {
+            background: lightblue;
+        }
+
+        .container:hover .three {
+            background: pink;
+        }
+
+        .container:hover .four {
+            background: limegreen;
+        }
+
+        .container:hover .five {
+            background: violet;
+        }
+
+        .container:hover .six {
+            background: coral;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle one"></div>
+        <div class="circle two"></div>
+        <div class="circle three"></div>
+        <div class="circle four"></div>
+        <div class="circle five"></div>
+        <div class="circle six"></div>
+    </div>
+</body>
+</html>
