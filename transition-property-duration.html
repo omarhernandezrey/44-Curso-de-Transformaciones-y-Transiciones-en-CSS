@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Boxes</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: rgb(200, 237, 163);
+            width: 400px;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease-in-out;
+        }
+
+        /* Cambia el color de fondo del contenedor al hacer hover */
+        .container:hover {
+            background: rgb(178, 230, 141);
+        }
+
+        /* Efecto de escala en las cajas al hacer hover */
+        .container:hover .box {
+            transform: scale(1.2);
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            transition: transform 500ms, box-shadow 300ms;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Colores y tiempos de transición personalizados */
+        .box1 {
+            background: lightcoral;
+            transition: transform 500ms, background 300ms;
+        }
+
+        .box2 {
+            background: salmon;
+            transition: transform 1s, background 500ms;
+        }
+
+        .box3 {
+            background: darksalmon;
+            transition: transform 1.5s, background 700ms;
+        }
+
+        /* Efecto extra al hacer hover en cada caja */
+        .box:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+    </div>
+</body>
+</html>
