@@ -4,21 +4,152 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Parallax with Dynamic Alice</title>
+    <style>
+        /* Reset de márgenes */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            overflow: hidden;
+        }
+
+        /* Contenedor principal del efecto parallax */
+        .parallax-container {
+            width: 100%;
+            height: 100vh;
+            perspective: 12px; /* Profundidad aumentada */
+            perspective-origin: 50%;
+            overflow-x: hidden;
+            overflow-y: scroll; /* Scroll activado */
+            position: relative;
+        }
+
+        /* Configuración de capas */
+        .image__background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: url('https://i.ibb.co/jbLKgvX/Background.png') no-repeat center/cover;
+            transform: translateZ(0px) scale(1);
+            transition: transform 0.5s ease-in-out; /* Transición suave */
+            z-index: 1;
+        }
+
+        .image__middle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            transform: translateZ(4px) scale(0.8);
+            transition: transform 0.5s ease-in-out;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image__foreground {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: url('https://i.ibb.co/vJdbRkj/Alice.png') no-repeat center/contain;
+            transform: translateZ(3px) scale(1); /* Más profundidad */
+            transition: transform 0.5s ease-in-out;
+            z-index: 3;
+        }
+
+        /* Tarjetas dentro del fondo */
+        .card {
+            background: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+            border-radius: 12px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+            width: 140px;
+            height: 180px;
+            position: absolute;
+            transform: rotate(-10deg);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: rotate(0deg) scale(1.1); /* Efecto hover */
+            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Tarjetas centradas dentro del fondo */
+        .card.one {
+            left: 25%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-10deg);
+        }
+
+        .card.two {
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%) rotate(5deg);
+        }
+
+        .card.three {
+            left: 75%;
+            top: 40%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+        }
+
+        /* Efecto de scroll suave */
+        .parallax-container::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .parallax-container::-webkit-scrollbar-thumb {
+            background: #47cfac;
+            border-radius: 5px;
+        }
+
+        .parallax-container::-webkit-scrollbar-track {
+            background: #e0e0e0;
+        }
+    </style>
 </head>
 <body>
     <div class="parallax-container">
-        <div class="image__background">
-            <img src="https://i.ibb.co/jbLKgvX/Background.png" alt="aa">
-        </div>
+        <!-- Fondo -->
+        <div class="image__background"></div>
+
+        <!-- Capa media con tarjetas -->
         <div class="image__middle">
-            <div class="card-one"></div>
+            <div class="card one"></div>
             <div class="card two"></div>
             <div class="card three"></div>
         </div>
-        <div class="image__foreground">
-            <img src="https://i.ibb.co/vJdbRkj/Alice.png" alt="bb">
-        </div>
+
+        <!-- Primer plano: Alicia -->
+        <div class="image__foreground"></div>
     </div>
+
+    <script>
+        // Efecto de paralaje dinámico
+        const container = document.querySelector('.parallax-container');
+        const background = document.querySelector('.image__background');
+        const middle = document.querySelector('.image__middle');
+        const foreground = document.querySelector('.image__foreground');
+
+        container.addEventListener('scroll', () => {
+            const scrollY = container.scrollTop;
+
+            // Movimiento suave del fondo
+            background.style.transform = `translateZ(0px) translateY(${scrollY * 0.2}px)`;
+
+            // Movimiento intermedio
+            middle.style.transform = `translateZ(4px) translateY(${scrollY * 0.4}px) scale(0.8)`;
+
+            // Alicia se mueve más que las otras capas
+            foreground.style.transform = `translateZ(3px) translateY(${scrollY * 0.8}px) scale(1.1)`;
+        });
+    </script>
 </body>
 </html>
