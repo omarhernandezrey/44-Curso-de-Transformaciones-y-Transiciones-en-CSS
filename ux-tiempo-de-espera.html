@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compact Menu</title>
+    <style>
+        /* Estilo general */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: white; /* Fondo blanco */
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Barra de navegación principal */
+        .nav {
+            display: flex;
+            background: orange;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav > li {
+            position: relative;
+            margin-right: 15px; /* Espaciado reducido entre los elementos principales */
+        }
+
+        /* Submenús */
+        .nav li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: green; /* Fondo verde */
+            border-radius: 8px;
+            z-index: 1000;
+            padding: 5px 0; /* Espaciado reducido dentro del submenú */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav li ul li {
+            position: relative;
+        }
+
+        .nav li ul li ul {
+            left: 100%;
+            top: 0;
+            margin-left: 0px; /* Espaciado reducido entre submenús anidados */
+        }
+
+        /* Estilo de los enlaces del submenú */
+        .nav li ul li a {
+            padding: 8px 15px; /* Espaciado más compacto */
+            display: block;
+            color: white;
+            font-size: 13px; /* Fuente más pequeña */
+        }
+
+        .nav li ul li a:hover {
+            background: #006400; /* Fondo más oscuro al pasar el ratón */
+        }
+
+        /* Mostrar submenús al pasar el ratón */
+        .nav li:hover > ul {
+            display: block;
+        }
+
+        /* Enlaces principales */
+        .nav > li > a {
+            padding: 8px 15px; /* Espaciado más compacto para enlaces principales */
+            display: inline-block;
+        }
+
+        .nav > li > a:hover {
+            background: #006400;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li>
+            <a href="/">Mujer</a>
+            <ul>
+                <li><a href="/">Camisetas</a></li>
+                <li><a href="/">Pantalones</a></li>
+                <li>
+                    <a href="/">Shorts</a>
+                    <ul>
+                        <li><a href="/">Cortos</a></li>
+                        <li><a href="/">Largos</a></li>
+                        <li><a href="/">Transparentes</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="/">Hombre</a></li>
+        <li><a href="/">Niños</a></li>
+    </ul>
+</body>
+</html>
