@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Hover Effects</title>
+    <style>
+        /* Estilo básico de los botones */
+        button {
+            height: 30px;
+            width: 100px;
+            background: papayawhip;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Botón con mejor rendimiento */
+        .better {
+            will-change: transform; /* Optimiza el rendimiento del hover */
+            transition: transform 500ms ease; /* Corrección de 'trasnsform' a 'transform' */
+        }
+        .better:hover {
+            transform: translateY(5px); /* Desplazamiento más suave */
+        }
+
+        /* Botón con peor rendimiento */
+        .worst {
+            transition: margin-top 500ms ease; /* Mueve el botón cambiando el margen */
+        }
+        .worst:hover {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="better">Better</button>
+        <button class="worst">Worst</button>
+    </div>
+</body>
+</html>
